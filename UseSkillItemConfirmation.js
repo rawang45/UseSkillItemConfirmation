@@ -1,5 +1,13 @@
 
 
+
+/*
+1)why onActorOk when you can apply this to other code?
+
+I would like to achieve that when the player is using something on themselves, they can choose where they want to use the item for
+for example, to use it on mouth, hand, leg, you get the idea.
+*/
+
 var Rawang = Rawang || {};
 
 //Make changes to onActorOk
@@ -66,7 +74,27 @@ Scene_Battle.prototype.checkConfirmation = function() {
 	
 };
 
-//this is basically the Original code of Scene_Battle.prototype.onActorOk;
+/*
+below this is basically the Original code of Scene_Battle.prototype.onActorOk;
+
+	I know, to achieve what I want to do, I would need to write code that return player to the item/skill page.
+	Here is the code that will run successfully, if completely overwrite Scene_Battle.prototype.onActorOk with these code:
+
+	this._actorWindow.hide();
+	this._helpWindow.clear();
+	switch (this._actorCommandWindow.currentSymbol()) {
+    case 'skill_type':
+		this._helpWindow.hide(); //this code is basically for YEP_BattleEngineCore plugin, this code can be removed
+        this._skillWindow.show();
+        this._skillWindow.activate();
+        break;
+    case 'item':
+        this._itemWindow.show();
+        this._itemWindow.activate();
+        break;
+    }
+	
+*/
 Scene_Battle.prototype.calresolution = function() {
     var action = BattleManager.inputtingAction();
     action.setTarget(this._actorWindow.index());
@@ -75,3 +103,4 @@ Scene_Battle.prototype.calresolution = function() {
     this._itemWindow.hide();
     this.selectNextCommand();
 };
+
