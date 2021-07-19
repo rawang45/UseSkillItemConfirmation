@@ -4,7 +4,7 @@
 /*
 1)why onActorOk when you can apply this to other code?
 
-I would like to achieve that when the player is using something on themselves, they can choose where they want to use the item for
+I would like to achieve that after the player use something on themselves, they can choose where they want to use the item for
 for example, to use it on mouth, hand, leg, you get the idea.
 */
 
